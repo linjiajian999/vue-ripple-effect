@@ -4,6 +4,6 @@ a vue component
 ``` html
 <vue-ripper-effect>
   <!-- slot -->
-  vue-ripple-effect
+  content slot
 </vue-ripper-effect>
 ```
