@@ -16,7 +16,8 @@
         :style="{
           transform: translate,
           width: rippleW + 'px',
-          height: rippleW + 'px'
+          height: rippleW + 'px',
+          backgroundColor: color
         }">
       </span>
     </span>
@@ -24,7 +25,13 @@
 </template>
 <script>
 export default {
-  name: 'vue-ripper-effect',
+  name: 'ripper-effect',
+  props: {
+    color: {
+      type: String,
+      default: '#000'
+    }
+  },
   data() {
     return {
       translateX: 0,
@@ -44,6 +51,7 @@ export default {
       this.$emit('click', evt)
     },
     onMousedown(evt) {
+      this.setMaskWidth(evt.offsetX, evt.offsetY)
       this.translateX = evt.offsetX
       this.translateY = evt.offsetY
       this.isTouch = true
@@ -54,13 +62,16 @@ export default {
     },
     onMouseup() {
       this.isTouch = false
+    },
+    setMaskWidth(x, y) {
+      const w = this.$el.offsetWidth
+      const h = this.$el.offsetHeight
+      const rx = x > w / 2 ? x : w - x
+      const ry = y > h / 2 ? h : h - y
+      const r = Math.sqrt(rx * rx + ry * ry)
+      // console.log(r)
+      this.rippleW = r * 2
     }
-  },
-  mounted() {
-    const w = this.$el.offsetWidth
-    const h = this.$el.offsetHeight
-    const r = Math.sqrt(w * w + h * h)
-    this.rippleW = r * 2
   }
 }
 </script>
@@ -89,7 +100,6 @@ export default {
   }
   &-content {
     display: block;
-    background-color: #000;
     width: 50px;
     height: 50px;
     position: absolute;
@@ -106,7 +116,7 @@ export default {
     transform .5s cubic-bezier(0,0,.2,1),
     width .5s cubic-bezier(0,0,.2,1),
     height .5s cubic-bezier(0,0,.2,1),
-    opacity 1s cubic-bezier(0,0,.2,1);
+    opacity .6s cubic-bezier(0,0,.2,1);
 }
 .mb-ripple .visible {
   opacity: 0.38;
