@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: 'ripper-effect',
+  name: 'ripple-effect',
   props: {
     color: {
       type: String,

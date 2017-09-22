@@ -2,8 +2,8 @@
 a vue component
 # use
 ``` html
-<ripper-effect>
+<ripple-effect>
   <!-- slot -->
   content slot
-</ripper-effect>
+</ripple-effect>
 ```
