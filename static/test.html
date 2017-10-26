@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="../dist/components/mbDialogs/index.debug.js"></script>
+  <link rel="stylesheet" href="../dist/components/mbDialogs/index.css">
+
+  <script src="../dist/components/mbRipple/index.debug.js"></script>
+  <link rel="stylesheet" href="../dist/components/mbRipple/index.css">
+  <!-- <script src="https://unpkg.com/element-ui@1.4.7/lib/alert.js"></script> -->
+</head>
+
+<body>
+  <div id="app">
+    <mb-ripple>
+      <div style="width:200px; height:200px">{{ msg }}</div>
+    </mb-ripple>
+    <testC></testC>
+    <test></test>
+    <mb-dialogs ></mb-dialogs>
+    <test2></test2>
+    <test3></test3>
+    <test4></test4>
+    <testC></testC>
+    <test></test>
+  </div>
+  <script>
+    // console.log(MbUI)
+    // console.log(MbUi.default);
+    Vue.use(mbDialogs.install)
+    Vue.use(mbRipple.install)
+    // console.log(mbDialogs.install)
+    // Vue.use(test.install)
+    // Vue.use(Vue => {
+    //   var test = Vue.component('test', {
+    //     template: '<div>231sa32f13sad2f1 {{ msg }}</div>',
+    //     data() {
+    //       return {
+    //         msg: 'test'
+    //       }
+    //     }
+    //   })
+    // })
+    var app = null
+    setTimeout(() => {
+      app = new Vue({
+        el: '#app',
+        components: {
+          // test2,
+          // test3,
+          // test4
+        },
+        data() {
+          return {
+            msg: '123'
+          }
+        }
+      })
+    }, 1000)
+
+  </script>
+</body>
+
+</html>

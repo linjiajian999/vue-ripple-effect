@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    // ... 已省略其它选项
+    "allowJs": true,
+    "strict": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es6",
+      "es2015.promise"
+    ]
+  }
+}

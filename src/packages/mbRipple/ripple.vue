@@ -1,6 +1,6 @@
 <template>
   <span
-    class="mb-ripple"
+    class="mb mb-ripple"
     @click="click($event)"
     @mousedown="onMousedown($event)"
     @mouseout="onMouseup"
@@ -23,15 +23,18 @@
     </span>
   </span>
 </template>
-<script>
-export default {
-  name: 'ripple-effect',
+<script lang="ts">
+import Vue from 'vue'
+// import Component from 'vue-class-component'
+export default Vue.extend({
+  name: 'mb-ripple',
   props: {
     color: {
       type: String,
       default: '#000'
     }
   },
+  // data
   data() {
     return {
       translateX: 0,
@@ -39,31 +42,39 @@ export default {
       isTouch: false,
       isTouchMoment: false,
       rippleW: 50
+      // translate: ''
     }
   },
   computed: {
-    translate() {
-      return 'translate(-50%, -50%) translate(' + this.translateX + 'px,' + this.translateY + 'px)' + (this.isTouchMoment ? 'scale(0.0001, 0.0001)' : '')
+    translate(): string {
+      return 'translate(-50%, -50%) translate(' + this.translateX + 'px,' + this.translateY + 'px)' + (this.isTouchMoment ? 'scale(0.01, 0.01)' : '')
     }
   },
   methods: {
-    click(evt) {
+    click(evt: MouseEvent): void {
       this.$emit('click', evt)
     },
-    onMousedown(evt) {
+    onMousedown(evt: MouseEvent): void {
+      // console.time('st')
+      // console.time('st2')
       this.setMaskWidth(evt.offsetX, evt.offsetY)
       this.translateX = evt.offsetX
       this.translateY = evt.offsetY
       this.isTouch = true
       this.isTouchMoment = true
+      // this.translate = 'translate(-50%, -50%) translate(' + this.translateX + 'px,' + this.translateY + 'px) scale(0.01, 0.01)'
       setTimeout(_ => {
         this.isTouchMoment = false
-      }, 0)
+        // this.translate = 'translate(-50%, -50%) translate(' + this.translateX + 'px,' + this.translateY + 'px)'
+        // console.log('set 0')
+      }, 20)
+      // console.timeEnd('st')
     },
-    onMouseup() {
+    onMouseup(): void {
+      // console.timeEnd('st2')
       this.isTouch = false
     },
-    setMaskWidth(x, y) {
+    setMaskWidth(x: number, y: number): void {
       const w = this.$el.offsetWidth
       const h = this.$el.offsetHeight
       const rx = x > w / 2 ? x : w - x
@@ -73,9 +84,10 @@ export default {
       this.rippleW = r * 2
     }
   }
-}
+})
 </script>
 <style lang="scss">
+@import '../public.scss';
 .mb-ripple {
   width: auto;
   border: none;
@@ -88,7 +100,6 @@ export default {
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
-
   &-container {
     position: absolute;
     left: 0;
@@ -100,8 +111,8 @@ export default {
   }
   &-content {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 0;
+    height: 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -109,6 +120,7 @@ export default {
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    // background: blue;
   }
 }
 .mb-ripple .isAnimating {
@@ -116,9 +128,10 @@ export default {
     transform .5s cubic-bezier(0,0,.2,1),
     width .5s cubic-bezier(0,0,.2,1),
     height .5s cubic-bezier(0,0,.2,1),
-    opacity .6s cubic-bezier(0,0,.2,1);
+    opacity .5s cubic-bezier(0,0,.2,1);
 }
 .mb-ripple .visible {
   opacity: 0.38;
+  // background: red;
 }
 </style>
