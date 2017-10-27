@@ -1,9 +1,9 @@
 {
-  "name": "mt4-chart",
+  "name": "vue-ripple-effect",
   "version": "1.0.0",
-  "description": "a vue ui-framework with typescript",
+  "description": "a vue ui-component with typescript",
   "author": "linjiajian999",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
