@@ -16,4 +16,12 @@ Vue.use(ripple.install)
   content slot
 </mb-ripple>
 ```
-
+or set color
+``` vue
+<mb-ripple color="#fff">
+  <!-- slot -->
+  content slot
+</mb-ripple>
+```
+# effect
+![image](https://github.com/linjiajian999/vue-ripple-effect/blob/master/static/ripple.gif?raw=true)
