@@ -1,9 +1,19 @@
 # vue-ripple-effect
 a vue component
+# install
+```
+npm i vue-ripple-effect
+```
 # use
-``` html
+``` js
+import Vue from ''vue
+import ripple from 'vue-ripple-effect'
+Vue.use(ripple.install)
+```
+``` vue
 <mb-ripple>
   <!-- slot -->
   content slot
 </mb-ripple>
 ```
+
