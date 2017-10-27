@@ -42,7 +42,6 @@ export default Vue.extend({
       isTouch: false,
       isTouchMoment: false,
       rippleW: 50
-      // translate: ''
     }
   },
   computed: {
@@ -62,16 +61,11 @@ export default Vue.extend({
       this.translateY = evt.offsetY
       this.isTouch = true
       this.isTouchMoment = true
-      // this.translate = 'translate(-50%, -50%) translate(' + this.translateX + 'px,' + this.translateY + 'px) scale(0.01, 0.01)'
       setTimeout(_ => {
         this.isTouchMoment = false
-        // this.translate = 'translate(-50%, -50%) translate(' + this.translateX + 'px,' + this.translateY + 'px)'
-        // console.log('set 0')
       }, 20)
-      // console.timeEnd('st')
     },
     onMouseup(): void {
-      // console.timeEnd('st2')
       this.isTouch = false
     },
     setMaskWidth(x: number, y: number): void {
@@ -80,7 +74,6 @@ export default Vue.extend({
       const rx = x > w / 2 ? x : w - x
       const ry = y > h / 2 ? h : h - y
       const r = Math.sqrt(rx * rx + ry * ry)
-      // console.log(r)
       this.rippleW = r * 2
     }
   }
@@ -120,7 +113,6 @@ export default Vue.extend({
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    // background: blue;
   }
 }
 .mb-ripple .isAnimating {
@@ -132,6 +124,5 @@ export default Vue.extend({
 }
 .mb-ripple .visible {
   opacity: 0.38;
-  // background: red;
 }
 </style>
