@@ -1,5 +1,5 @@
 # vue-ripple-effect
-a vue component
+a vue component with typescript
 # install
 ```
 npm i vue-ripple-effect
