@@ -26,3 +26,6 @@ or set color
 ```
 # effect
 ![image](https://github.com/linjiajian999/vue-ripple-effect/blob/master/static/ripple.gif?raw=true)
+  
+    
+welcome fork and star
