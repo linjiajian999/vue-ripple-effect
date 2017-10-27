@@ -8,6 +8,7 @@ npm i vue-ripple-effect
 ``` js
 import Vue from ''vue
 import ripple from 'vue-ripple-effect'
+import 'vue-ripple-effect/index.css'
 Vue.use(ripple.install)
 ```
 ``` vue
