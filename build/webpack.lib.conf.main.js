@@ -106,7 +106,7 @@ const libConfig = {
       'process.env': process.env.NODE_ENV
     }),
     new webpack.BannerPlugin({
-      banner: `/*!\n* mb-ui v${version}\n* author: linjiajian999\n* MIT License\n*/\n`,
+      banner: `/*!\n* mb-ripple v${version}\n* author: linjiajian999\n* MIT License\n*/\n`,
       raw: true,
       entryOnly: true
     }),

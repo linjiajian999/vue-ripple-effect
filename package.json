@@ -1,9 +1,12 @@
 {
   "name": "vue-ripple-effect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a vue ui-component with typescript",
   "author": "linjiajian999",
-  "repository": "https://github.com/linjiajian999/vue-ripple-effect.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linjiajian999/vue-ripple-effect.git"
+  },
   "keywords": [
     "vue-ripple",
     "vue ripple",
