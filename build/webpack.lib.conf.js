@@ -134,7 +134,7 @@ const componentsWebpackConfig = merge(baseConfig, {
   // entry: componentsEntry.entry,
   output: {
     path: config.build.assetsRoot,
-    filename: 'components/[name]/index.js',
+    filename: '[name]/index.js',
     library: '[name]',
     libraryTarget: 'umd'
   },
@@ -143,7 +143,7 @@ const componentsWebpackConfig = merge(baseConfig, {
   plugins: [
     ...libConfig.plugins,
     new ExtractTextPlugin({
-      filename: 'components/[name]/index.css'
+      filename: '[name]/index.css'
     })
   ]
 })

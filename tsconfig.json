@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    // ... 已省略其它选项
     "allowJs": true,
     "strict": true,
     "module": "es2015",

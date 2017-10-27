@@ -19,7 +19,7 @@ const isSelfDebug = false
 const version = require('../package.json').version
 
 baseConfig.entry = {
-  'mbRipple': ['./src/packages/index.ts']
+  'index': ['./src/packages/index.ts']
 }
 const libConfig = {
   module: {
@@ -120,7 +120,7 @@ const indexWebpackConfig = merge(baseConfig, {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    library: 'MbUI',
+    library: 'MbRipple',
     libraryTarget: 'umd'
   },
   module: libConfig.module,
